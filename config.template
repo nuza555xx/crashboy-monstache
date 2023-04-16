@@ -1,13 +1,13 @@
-mongo-url = "mongodb+srv://admin:Lq2b9PmD1JNOZXpJ@madiify.iecvqit.mongodb.net/?retryWrites=true&w=majority"
-elasticsearch-urls = ["https://madify.es.asia-southeast1.gcp.elastic-cloud.com"]
+mongo-url = "mongodb+srv://{{.MONGO_USER}}:{{.MONGO_PASSWORD}}@{{.MONGO_URL}}/?retryWrites=true&w=majority"
+elasticsearch-urls = [{{.ES_URL}}]
 
 gzip = true
 stats = true
 index-stats = true
 index-as-update=true
 
-elasticsearch-user = "elastic"
-elasticsearch-password = "4yUePcoBvxT02eZWqLMuznhv"
+elasticsearch-user = "{{.ES_USER}}"
+elasticsearch-password = "{{.ES_PASSWORD}}"
 
 elasticsearch-max-conns = 10
 elasticsearch-max-seconds = 5
@@ -22,7 +22,6 @@ resume-name = "default"
 verbose = true
 
 direct-read-namespaces = ["dev.vehicleviews"]
-
 
 [[mapping]]
 namespace = "dev.vehicleviews"

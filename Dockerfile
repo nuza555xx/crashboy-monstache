@@ -2,6 +2,6 @@ FROM rwynn/monstache:latest
 
 WORKDIR /app
 
-COPY config.toml /app/monstache.config.toml
+COPY config.template /app/monstache.config.template
 
-CMD ["-f", "./monstache.config.toml"]
+CMD ["-t", "./monstache.config.template"]
