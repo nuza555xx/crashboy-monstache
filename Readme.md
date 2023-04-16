@@ -1,5 +1,5 @@
 # Madify monstache
- MongoDB to ElasticSearch Sync using Monstache
+ MongoDB to `ElasticSearch` Sync using `Monstache
 
 ## Docker build
 
