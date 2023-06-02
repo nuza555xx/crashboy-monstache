@@ -1,13 +1,7 @@
-mongo-url = "mongodb+srv://{{.MONGO_USER}}:{{.MONGO_PASSWORD}}@{{.MONGO_URL}}/?retryWrites=true&w=majority"
-elasticsearch-urls = [{{.ES_URL}}]
-
 gzip = true
 stats = true
 index-stats = true
 index-as-update=true
-
-elasticsearch-user = "{{.ES_USER}}"
-elasticsearch-password = "{{.ES_PASSWORD}}"
 
 elasticsearch-max-conns = 10
 elasticsearch-max-seconds = 5
@@ -23,6 +17,12 @@ verbose = true
 
 direct-read-namespaces = ["dev.vehicleviews"]
 
+[[relate]]
+namespace = "dev.vehicles"
+with-namespace = "dev.vehicleviews"
+
 [[mapping]]
 namespace = "dev.vehicleviews"
 index = "vehicles"
+
+
