@@ -4,33 +4,33 @@ steps:
       [
         "build",
         "-t",
-        "asia-southeast1-docker.pkg.dev/$PROJECT_ID/crashboy/monstache:latest",
+        "asia-southeast1-docker.pkg.dev/crashboy-395715/crashboy/monstache:latest",
         ".",
       ]
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
         "push",
-        "asia-southeast1-docker.pkg.dev/$PROJECT_ID/crashboy/monstache:latest",
+        "asia-southeast1-docker.pkg.dev/crashboy-395715/crashboy/monstache:latest",
       ]
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: gcloud
-    args:
-      [
-        "run",
-        "deploy",
-        "monstache",
-        "--image",
-        "asia-southeast1-docker.pkg.dev/$PROJECT_ID/crashboy/monstache:latest",
-        "--platform=managed",
-        "--region=asia-southeast1",
-        "--allow-unauthenticated",
-        "--min-instances=1",
-        "--max-instances=2",
-        "--memory=256Mi",
-        "--ingress=internal",
-      ]
+  # - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  #   entrypoint: gcloud
+  #   args:
+  #     [
+  #       "run",
+  #       "deploy",
+  #       "monstache",
+  #       "--image",
+  #       "asia-southeast1-docker.pkg.dev/crashboy-395715/crashboy/monstache:latest",
+  #       "--platform=managed",
+  #       "--region=asia-southeast1",
+  #       "--allow-unauthenticated",
+  #       "--min-instances=1",
+  #       "--max-instances=2",
+  #       "--memory=256Mi",
+  #       "--ingress=internal",
+  #     ]
 
-logsBucket: "gs://crashboy-388808_cloudbuild"
-options:
-  logging: GCS_ONLY
+# logsBucket: "gs://crashboy-388808_cloudbuild"
+# options:
+#   logging: GCS_ONLY

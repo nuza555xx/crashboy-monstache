@@ -2,10 +2,8 @@ gzip = true
 stats = true
 index-stats = true
 index-as-update=true
-enable-http-server = true
-http-server-addr = ":8080"
 
-elasticsearch-max-conns = 10
+elasticsearch-max-conns = 1
 elasticsearch-max-seconds = 5
 elasticsearch-max-bytes = 8000000
 
